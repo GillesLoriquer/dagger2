@@ -1,6 +1,7 @@
 package com.example.dagger2.di;
 
-import com.example.dagger2.AuthActivity;
+import com.example.dagger2.di.auth.AuthViewModelModule;
+import com.example.dagger2.ui.auth.AuthActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -8,8 +9,8 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class ActivityBuildersModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(
+            modules = {AuthViewModelModule.class}
+    )
     abstract AuthActivity contributeAuthActivity();
-
-
 }
