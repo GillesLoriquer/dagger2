@@ -24,7 +24,7 @@ public class AppModule {
     }
 
     @Provides
-    static RequestManager provideGlideInstante(
+    static RequestManager provideGlideInstance(
             Application application,
             RequestOptions requestOptions) {
 
@@ -34,7 +34,7 @@ public class AppModule {
     }
 
     @Provides
-    static Drawable priveAppDrawable(Application application) {
+    static Drawable provideAppDrawable(Application application) {
         return ContextCompat.getDrawable(application, R.drawable.logo);
     }
 }
